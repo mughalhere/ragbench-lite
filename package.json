@@ -1,0 +1,71 @@
+{
+  "name": "ragbench-lite",
+  "version": "0.1.0",
+  "description": "Golden-question evaluation harness for RAG pipelines \u2014 hit-rate, MRR, faithfulness, latency, CI gates.",
+  "license": "MIT",
+  "author": "Muhammad Zia <mughalhere@icloud.com>",
+  "homepage": "https://github.com/mughalhere/ragbench-lite#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mughalhere/ragbench-lite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mughalhere/ragbench-lite/issues"
+  },
+  "keywords": [
+    "rag",
+    "evaluation",
+    "llm",
+    "retrieval",
+    "benchmark",
+    "cli",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "ragbench": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests --ext .ts",
+    "prepublishOnly": "npm run build && npm run test && npm run typecheck"
+  },
+  "dependencies": {
+    "pino": "^9.6.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.4.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
