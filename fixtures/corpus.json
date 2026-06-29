@@ -1,0 +1,42 @@
+[
+  {
+    "source": "datasheets/x200.pdf#thermal",
+    "text": "Product X-200 max operating temperature is 85\u00b0C. Do not exceed."
+  },
+  {
+    "source": "datasheets/x200.pdf#power",
+    "text": "Product X-200 nominal voltage 24V DC, peak current 2.5A."
+  },
+  {
+    "source": "datasheets/y100.pdf#thermal",
+    "text": "Product Y-100 max operating temperature is 70\u00b0C."
+  },
+  {
+    "source": "policies/returns.md",
+    "text": "Returns accepted within 30 days with original packaging."
+  },
+  {
+    "source": "policies/shipping.md",
+    "text": "Standard shipping takes 3-5 business days in the UK."
+  },
+  {
+    "source": "wiki/onboarding.md",
+    "text": "New engineers complete security training in week one."
+  },
+  {
+    "source": "wiki/rag.md",
+    "text": "Hybrid search combines BM25 with vector retrieval using RRF."
+  },
+  {
+    "source": "specs/pump-a1.md",
+    "text": "Pump A1 flow rate 120 L/min at 3 bar."
+  },
+  {
+    "source": "specs/pump-a1.md#materials",
+    "text": "Pump A1 housing is 316 stainless steel."
+  },
+  {
+    "source": "faq/support.md",
+    "text": "Support hours are 9am-6pm GMT Monday to Friday."
+  }
+]

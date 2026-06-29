@@ -1,0 +1,63 @@
+- id: q1
+  question: "What is the max operating temperature of product X-200?"
+  expected_sources: ["datasheets/x200.pdf#thermal"]
+  expected_answer_contains: ["85°C"]
+  judge: true
+- id: q2
+  question: "What voltage does X-200 use?"
+  expected_sources: ["datasheets/x200.pdf#power"]
+  expected_answer_contains: ["24V"]
+  judge: true
+- id: q3
+  question: "Max temperature for Y-100?"
+  expected_sources: ["datasheets/y100.pdf#thermal"]
+  expected_answer_contains: ["70°C"]
+- id: q4
+  question: "How many days for returns?"
+  expected_sources: ["policies/returns.md"]
+  expected_answer_contains: ["30 days"]
+- id: q5
+  question: "UK shipping time?"
+  expected_sources: ["policies/shipping.md"]
+  expected_answer_contains: ["3-5"]
+- id: q6
+  question: "What is hybrid search?"
+  expected_sources: ["wiki/rag.md"]
+  expected_answer_contains: ["BM25"]
+  judge: true
+- id: q7
+  question: "Pump A1 flow rate?"
+  expected_sources: ["specs/pump-a1.md"]
+  expected_answer_contains: ["120 L/min"]
+- id: q8
+  question: "What material is Pump A1?"
+  expected_sources: ["specs/pump-a1.md#materials"]
+  expected_answer_contains: ["316"]
+- id: q9
+  question: "Support hours?"
+  expected_sources: ["faq/support.md"]
+  expected_answer_contains: ["9am-6pm"]
+- id: q10
+  question: "Onboarding security training?"
+  expected_sources: ["wiki/onboarding.md"]
+  expected_answer_contains: ["security training"]
+- id: q11
+  question: "X-200 peak current?"
+  expected_sources: ["datasheets/x200.pdf#power"]
+  expected_answer_contains: ["2.5A"]
+- id: q12
+  question: "Pump A1 pressure?"
+  expected_sources: ["specs/pump-a1.md"]
+  expected_answer_contains: ["3 bar"]
+- id: q13
+  question: "Return packaging requirement?"
+  expected_sources: ["policies/returns.md"]
+  expected_answer_contains: ["original packaging"]
+- id: q14
+  question: "RRF used for what?"
+  expected_sources: ["wiki/rag.md"]
+  expected_answer_contains: ["RRF"]
+- id: q15
+  question: "Support timezone?"
+  expected_sources: ["faq/support.md"]
+  expected_answer_contains: ["GMT"]
