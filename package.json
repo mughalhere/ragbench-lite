@@ -1,7 +1,7 @@
 {
   "name": "ragbench-lite",
-  "version": "0.1.0",
-  "description": "Golden-question evaluation harness for RAG pipelines \u2014 hit-rate, MRR, faithfulness, latency, CI gates.",
+  "version": "0.1.1",
+  "description": "Golden-question evaluation harness for RAG pipelines — hit-rate, MRR, faithfulness, latency, CI gates.",
   "license": "MIT",
   "author": "Muhammad Zia <mughalhere@icloud.com>",
   "homepage": "https://github.com/mughalhere/ragbench-lite#readme",
