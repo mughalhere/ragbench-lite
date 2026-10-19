@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+- Anthropic judge: the default model `claude-3-5-haiku-latest` is retired, so every call failed. It now defaults to `claude-haiku-5-5`, reads the score from the text block, and throws on a refusal or a missing score instead of returning 3.
+
 ## [0.1.0] - 2026-06-30
 
 ### Added
