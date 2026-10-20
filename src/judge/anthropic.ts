@@ -7,7 +7,7 @@ export function createAnthropicJudge(opts: {
   fetchImpl?: typeof fetch;
 }): Judge {
   const apiKey = opts.apiKey ?? process.env.ANTHROPIC_API_KEY;
-  const model = opts.model ?? "claude-3-5-haiku-latest";
+  const model = opts.model ?? "claude-haiku-5-5";
   const fetchImpl = opts.fetchImpl ?? fetch;
   return {
     async score(input) {
@@ -22,14 +22,23 @@ export function createAnthropicJudge(opts: {
         },
         body: JSON.stringify({
           model,
-          max_tokens: 8,
+          max_tokens: 1024,
+          output_config: { effort: "low" },
           messages: [{ role: "user", content: prompt }],
         }),
       });
       if (!res.ok) throw new Error(`Anthropic judge failed: ${res.status}`);
-      const data = (await res.json()) as { content: Array<{ text?: string }> };
-      const n = Number.parseInt(data.content[0]?.text?.trim() ?? "3", 10);
-      return Math.min(5, Math.max(1, Number.isFinite(n) ? n : 3));
+      const data = (await res.json()) as {
+        stop_reason?: string;
+        content: Array<{ type: string; text?: string }>;
+      };
+      if (data.stop_reason === "refusal") throw new Error("Anthropic judge refused the request");
+      const text = data.content.find((block) => block.type === "text")?.text?.trim();
+      const n = Number.parseInt(text ?? "", 10);
+      if (!Number.isFinite(n)) {
+        throw new Error(`Anthropic judge returned no score (stop_reason ${data.stop_reason})`);
+      }
+      return Math.min(5, Math.max(1, n));
     },
   };
 }
